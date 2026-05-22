@@ -1,0 +1,192 @@
+.wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  padding: 40px 20px;
+}
+
+.card {
+  width: 100%;
+
+  max-width: 700px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow: 0 0 15px #ddd;
+}
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+}
+
+.name {
+  font-size: 30px;
+
+  margin: 0;
+}
+
+.status {
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.active {
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.inactive {
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+.info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.infoBox {
+  background: #f9fafb;
+
+  padding: 18px;
+
+  border-radius: 12px;
+}
+
+.infoBox h4 {
+  margin-bottom: 10px;
+
+  font-size: 15px;
+
+  color: gray;
+}
+
+.infoBox p {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 600;
+}
+
+.courseSection {
+  margin-top: 20px;
+}
+
+.courseTitle {
+  margin-bottom: 15px;
+
+  font-size: 22px;
+}
+
+.courseList {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.courseItem {
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+  padding: 10px 14px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.editBtn {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  background: #2563eb;
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.editBtn:hover {
+  opacity: 0.9;
+}
+
+.notFound {
+  text-align: center;
+
+  margin-top: 50px;
+
+  font-size: 26px;
+}
+
+:global(.dark) .card {
+  background: #1e1e1e;
+
+  color: white;
+}
+
+:global(.dark) .infoBox {
+  background: #2a2a2a;
+}
+
+:global(.dark) .infoBox h4 {
+  color: #aaa;
+}
+
+:global(.dark) .courseItem {
+  background: #1e3a8a;
+
+  color: #bfdbfe;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+}

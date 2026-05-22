@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+
+  padding: 20px;
+}
+
+.card {
+  background: white;
+
+  color: black;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 10px #ddd;
+
+  text-align: center;
+}
+
+:global(.dark) .card {
+  background: #1e1e1e;
+
+  color: white;
+}

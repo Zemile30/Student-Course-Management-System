@@ -74,13 +74,13 @@ const Students = () => {
           const matchesStatus =
             status
               ? student.status ===
-                status
+              status
               : true;
 
           const matchesFaculty =
             faculty
               ? student.faculty ===
-                faculty
+              faculty
               : true;
 
           return (
@@ -110,7 +110,7 @@ const Students = () => {
   const totalPages =
     Math.ceil(
       filteredStudents.length /
-        perPage
+      perPage
     );
 
   const handleDelete = (
@@ -209,183 +209,183 @@ const Students = () => {
 
       {filteredStudents.length ===
         0 && (
-        <h2>
-          No Students Found
-        </h2>
-      )}
+          <h2>
+            No Students Found
+          </h2>
+        )}
 
       {filteredStudents.length >
         0 && (
-        <>
-          <div
-            className={
-              styles.tableWrapper
-            }
-          >
-            <table
+          <>
+            <div
               className={
-                styles.table
+                styles.tableWrapper
               }
             >
-              <thead>
-                <tr>
-                  <th>
-                    Full Name
-                  </th>
+              <table
+                className={
+                  styles.table
+                }
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      Full Name
+                    </th>
 
-                  <th>Age</th>
+                    <th>Age</th>
 
-                  <th>Email</th>
+                    <th>Email</th>
 
-                  <th>
-                    Faculty
-                  </th>
+                    <th>
+                      Faculty
+                    </th>
 
-                  <th>
-                    Status
-                  </th>
+                    <th>
+                      Status
+                    </th>
 
-                  <th>
-                    Courses
-                  </th>
+                    <th>
+                      Courses
+                    </th>
 
-                  <th>
-                    Actions
-                  </th>
-                </tr>
-              </thead>
+                    <th>
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
 
-              <tbody>
-                {paginatedStudents.map(
-                  (
-                    student: any
-                  ) => (
-                    <tr
-                      key={
-                        student.id
-                      }
-                    >
-                      <td>
-                        {
-                          student.fullName
-                        }
-                      </td>
-
-                      <td>
-                        {
-                          student.age
-                        }
-                      </td>
-
-                      <td>
-                        {
-                          student.email
-                        }
-                      </td>
-
-                      <td>
-                        {
-                          student.faculty
-                        }
-                      </td>
-
-                      <td>
-                        {
-                          student.status
-                        }
-                      </td>
-
-                      <td>
-                        {
-                          student
-                            .courses
-                            .length
-                        }
-                      </td>
-
-                      <td
-                        className={
-                          styles.actions
+                <tbody>
+                  {paginatedStudents.map(
+                    (
+                      student: any
+                    ) => (
+                      <tr
+                        key={
+                          student.id
                         }
                       >
-                        <Link
-                          to={`/students/${student.id}`}
-                        >
-                          Details
-                        </Link>
+                        <td>
+                          {
+                            student.fullName
+                          }
+                        </td>
 
-                        <Link
-                          to={`/students/edit/${student.id}`}
-                        >
-                          Edit
-                        </Link>
+                        <td>
+                          {
+                            student.age
+                          }
+                        </td>
 
-                        <button
-                          onClick={() =>
-                            handleDelete(
-                              student.id
-                            )
+                        <td>
+                          {
+                            student.email
+                          }
+                        </td>
+
+                        <td>
+                          {
+                            student.faculty
+                          }
+                        </td>
+
+                        <td>
+                          {
+                            student.status
+                          }
+                        </td>
+
+                        <td>
+                          {
+                            student
+                              .courses
+                              .length
+                          }
+                        </td>
+
+                        <td
+                          className={
+                            styles.actions
                           }
                         >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
+                          <Link
+                            to={`/students/${student.id}`}
+                          >
+                            Details
+                          </Link>
+
+                          <Link
+                            to={`/students/edit/${student.id}`}
+                          >
+                            Edit
+                          </Link>
+
+                          <button
+                            onClick={() =>
+                              handleDelete(
+                                student.id
+                              )
+                            }
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    )
+                  )}
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              className={
+                styles.pagination
+              }
+            >
+              <button
+                disabled={
+                  currentPage ===
+                  1
+                }
+                onClick={() =>
+                  setCurrentPage(
+                    (
+                      prev
+                    ) =>
+                      prev -
+                      1
                   )
-                )}
-              </tbody>
-            </table>
-          </div>
+                }
+              >
+                Prev
+              </button>
 
-          <div
-            className={
-              styles.pagination
-            }
-          >
-            <button
-              disabled={
-                currentPage ===
-                1
-              }
-              onClick={() =>
-                setCurrentPage(
-                  (
-                    prev
-                  ) =>
-                    prev -
-                    1
-                )
-              }
-            >
-              Prev
-            </button>
+              <span>
+                Page{" "}
+                {currentPage} of{" "}
+                {totalPages}
+              </span>
 
-            <span>
-              Page{" "}
-              {currentPage} of{" "}
-              {totalPages}
-            </span>
-
-            <button
-              disabled={
-                currentPage ===
-                totalPages
-              }
-              onClick={() =>
-                setCurrentPage(
-                  (
-                    prev
-                  ) =>
-                    prev +
-                    1
-                )
-              }
-            >
-              Next
-            </button>
-          </div>
-        </>
-      )}
+              <button
+                disabled={
+                  currentPage ===
+                  totalPages
+                }
+                onClick={() =>
+                  setCurrentPage(
+                    (
+                      prev
+                    ) =>
+                      prev +
+                      1
+                  )
+                }
+              >
+                Next
+              </button>
+            </div>
+          </>
+        )}
     </div>
   );
 };
